@@ -1,41 +1,25 @@
-// import { Component } from 'react';
-import { useState } from 'react';
+import { useRef } from 'react'
 
-// class App extends Component{
-//   state = { counter: 0 }
-
-//   increment = () => {
-//     this.setState({ counter: this.state.counter + 1})
-//   }
-
-//   render(){
-//     return(
-//       <div>
-//         counter: {this.state.counter}
-//         <button onClick={this.increment}>Increment</button>
-//       </div>
-//     )
-//   }
-// }
-const useCounter = (initial) =>{
-  const [counter, setCounter] = useState(initial);
-
-  const increment = () =>{
-    setCounter( counter + 1 );
+const App = () => {
+  //podemos acceder a los elementos html del jsx
+  //similar al document.getElement
+  const ref = useRef();
+  const inputRef = useRef();
+  const click = () =>{
+    console.log(ref.current);
+    ref.current.innerHTML = 'Chanchito feliz';
   }
 
-  return [counter, increment]
-}
-
-const App = () =>{
- const [counter, increment] = useCounter(0)
-
-  return(
+  const focus = () =>{
+    inputRef.current.focus();
+  }
+  return (
     <div>
-      Counter: {counter}
-      <button onClick={increment}>Increment</button> 
+      <input ref={inputRef}/>
+      <button onClick={focus}>Focus</button>
+      <div onclick={click} ref={ref}>lala</div>
     </div>
   )
 }
 
-export default App;
+export default App
