@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import StarRating from './components/2-useState';
+import StarRating from './components/1.2-useState';
 
 function App() {
   return (
