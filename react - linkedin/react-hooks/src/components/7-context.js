@@ -1,31 +1,20 @@
-import { useInput } from "./customHooks/useInput";
+import { TreesContext, useTrees } from "..";
+import { useContext } from "react";
 
-const Form = () => {
-  const [titleProps, resetTitle] = useInput("");
-  const [colorProps, resetColor] = useInput("#000000");
-
-  const submit = (e) => {
-    e.preventDefault();
-    alert(`${titleProps.value} sounds like ${colorProps.value}`);
-    resetTitle();
-    resetColor();
-  };
+const List = () => {
+  // const { trees } = useContext(TreesContext);
+  const {trees} = useTrees();
 
   return (
-    <form onSubmit={submit}>
-      <input
-        {...titleProps}
-        type="text"
-        placeholder="Sound..."
-      />
-
-      <input
-        {...colorProps}
-        type="color"
-      />
-      <button>ADD</button>
-    </form>
+    <div>
+      <h1>Trees I've heard Of</h1>
+      <ul>
+        {trees.map((tree) => (
+          <li key={tree.id}>{tree.type}</li>
+        ))}
+      </ul>
+    </div>
   );
 };
 
-export default Form;
+export default List;
