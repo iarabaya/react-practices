@@ -1,17 +1,17 @@
 import React, { useReducer } from 'react'
 
-const initialValue = "hi";
+const initialState = { message: "hi" };
 
-const reducer = (state) => {
-  switch (state.action) {
+const reducer = (state, action) => {
+  switch (action.type) {
     case "yell":
       return {
-        message: "HEY!"
+        message: `HEY! I JUST SAID ${state.message}`
       }
 
     case "whisper":
       return {
-        message: "excuse me"
+        message: `excuse me, ${state.message}`
       }
   
     default: 
@@ -23,15 +23,13 @@ const reducer = (state) => {
 
 const App = () => {
 
-    const [state, dispatch] = useReducer(reducer,initialValue);
+    const [state, dispatch] = useReducer(reducer,initialState);
   
     return (
     <>
-      <input 
-      type="checkbox" 
-      value={checked} 
-      onChange={()=> setChecked((checked) => !checked)}/>
-      {checked ? "checked" : "not checked"}
+      <p>Message: {state.message}</p>
+      <button onClick={()=>disptach({ type: "yell" })}>YELL</button>
+      <button onClick={()=>disptach({ type: "whisper" })}>whisper</button>
     </>
   )
 }
