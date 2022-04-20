@@ -1,0 +1,23 @@
+import './App.css';
+import MyComponent from './components/errorHandling/MyComponent';
+import ErrorBoundary from './components/errorHandling/ErrorBoundary';
+function App() {
+  return (
+    <div className="App">
+      <h1>Doctor Nicolás</h1>
+    </div>
+  );
+}
+
+export default App;
+
+
+//ERROR BOUNDARIES EXAMPLE
+// <h1>Tienda Online</h1>
+// <h5>Selecciona un Producto</h5>
+
+// <ErrorBoundary>
+//   <MyComponent title="Product X"/>
+//   <MyComponent title="Product Y"/>
+//   <MyComponent title="Product Z"/>
+// </ErrorBoundary>
