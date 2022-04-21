@@ -4,7 +4,19 @@ class Confirmacion extends Component {
   }
   state = {  }
   render() { 
-    return ( <h1>Confrmacion</h1> );
+    return ( 
+    <div>
+        <h5>Confirmar</h5>
+        <button type="button">
+          <span></span>
+        </button>
+      <div>
+        <p>No olvide llegar a tiempo</p>
+      </div>
+      <div>
+        <button>OK</button>
+      </div>
+    </div>);
   }
 }
  
