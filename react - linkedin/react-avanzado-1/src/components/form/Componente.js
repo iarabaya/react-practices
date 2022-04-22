@@ -1,3 +1,5 @@
+import { Component } from 'react';
+
 class Componente extends Component {
   constructor(props) {
     super(props);
@@ -13,39 +15,56 @@ class Componente extends Component {
     e.preventDefault();
   }
 
-  onNombreInputChange = (e) => {
-    // console.log(e.target.value);
+  onInputChange = (e) => {
     const value = e.target.value;
-    this.setState({item1: value})
+    const nombre = e.target.name;
+
+    this.setState({
+      [nombre] : value
+    })
   }
-  onApellidoInputChange = (e) => {
-    // console.log(e.target.value)
-    const value = e.target.value;
-    this.setState({item2: value})
-  }
-  onHobbyInputChange = (e) => {
-    console.log(e.target.value)
-    const value = e.target.value;
-    this.setState({item3: value})
-  }
+
+  // onNombreInputChange = (e) => {
+  //   // console.log(e.target.value);
+  //   const value = e.target.value;
+  //   this.setState({item1: value})
+  // }
+  // onApellidoInputChange = (e) => {
+  //   // console.log(e.target.value)
+  //   const value = e.target.value;
+  //   this.setState({item2: value})
+  // }
+  // onHobbyInputChange = (e) => {
+  //   console.log(e.target.value)
+  //   const value = e.target.value;
+  //   this.setState({item3: value})
+  // }
 
   render() {
     return (
       <div>
         <h1>Ingreso Club</h1>
-        <form onSubmit={this.onSubmitHandler}>
-          <input type="text" name="item1" placeholder="Nombre" onChange={this.onNombreInputChange}/>
+        <form onSubmit={this.onSubmitHandler} data-testid="formulario">
+          <input type="text" name="item1" placeholder="Nombre" onChange={this.onInputChange}/>
           
-          <input type="text" name="item2" placeholder="Apellido" onChange={this.onApellidoInputChange}/>
+          <input type="text" name="item2" placeholder="Apellido" onChange={this.onInputChange}/>
           
-          <input type="text" name="item3" placeholder="Hobby" onChange={this.onHobbyInputChange} />
+          <input type="text" name="item3" placeholder="Hobby" onChange={this.onInputChange} />
           
           <button type="submit">Guardar</button>
         </form>
 
         <div>
           <h1>Resultados</h1>
-          <span>valor 1: {this.state.item1}</span>
+          <div>
+            <span>Nombre: {this.state.item1}</span>
+          </div>
+          <div>
+            <span>Apellido: {this.state.item2}</span>
+          </div>
+          <div>
+            <span>Hobby: {this.state.item3}</span>
+          </div>
         </div>
       </div>
     );

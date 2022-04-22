@@ -1,10 +1,11 @@
 import './App.css';
+import Componente from './components/form/Componente';
 
 function App() {
 
   return (
     <div className="App">
-      <h1>Doctor Nicolás</h1>
+      <Componente/>
     </div>
   );
 }
