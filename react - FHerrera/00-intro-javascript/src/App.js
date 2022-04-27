@@ -1,5 +1,4 @@
 import './App.css';
-import {useContext} from './bases/06-destructuring'; 
 
 function App() {
   const persona = { name: 'Natasha', age: 36, alias: 'Black Widow'}
@@ -8,7 +7,6 @@ function App() {
   return (
     <div className="App">
       <h1>Hola mundo</h1>
-      {avenger.anios}
     </div>
   );
 }

@@ -32,3 +32,4 @@ returnPerson(persona);
 
 // const avenger = useContext(persona);
 // console.log(avenger);
+const { nombre, anios } = useContext(persona);
