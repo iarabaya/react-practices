@@ -1,5 +1,5 @@
 import React,{ useEffect } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link  } from 'react-router-dom';
 
 const List = () => {
   const navigate = useNavigate();
@@ -15,15 +15,20 @@ const List = () => {
 
 
   return (
-    <>
-      <h1>Listado de peliculas</h1>
-      <ul>
-        <li>peli 1</li>
-        <li>peli 2</li>
-        <li>peli 3</li>
-        <li>peli 4</li>
-      </ul>
-    </>
+      <div className='row'>
+        
+        <div className='col-4'style={{border: '1px solid red'}}>
+          <div className='card'>
+            <img src='' className='card-img-top' alt=''/>
+            <div className='card-body'>
+              <h5 className='card-title'>Card title</h5>
+              <p className='card-text'>Some text of the card.</p>
+              <Link to='/' className='btn btn-primary'>Go somewhere</Link>
+            </div>
+          </div>
+        </div>
+       
+      </div>
   )
 }
 
