@@ -10,6 +10,7 @@ import Footer from "./components/Footer/Footer";
 //Styles
 // import './css/App.css';
 import './css/bootstrap.min.css'
+import Details from './components/Details/Details';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Routes>
         <Route exact path='/' element={<Login/>}/>
         <Route path='/list' element={<List/>}/>
+        <Route path='/detail/:id' element={<Details/>}/>
       </Routes>
 
       <Footer/>

@@ -1,26 +1,26 @@
 import axios from 'axios';
-import React, { useState } from 'react'
+import React, { useState, useEffect} from 'react'
 import { Navigate } from 'react-router-dom';
 
 const Details = ({token}) => {
-  let query = ''
-  let movieID = query.get('movieID');
+  // let query = ''
+  // let movieID = query.get('movieID');
 
   const [ movie, setMovie ] = useState(null);
 
   useEffect(() => {
-    const endPoint = 'https:...'
-    axios.get(endPoint).then( res => {
-      const movieData = res.data;
-      setMovie(movieData);
-    }).catch(err => console.log(err));
+    // const endPoint = 'https:...'
+    // axios.get(endPoint).then( res => {
+    //   const movieData = res.data;
+    //   setMovie(movieData);
+    // }).catch(err => console.log(err));
   
-  }, [movieID]);
+  }, []);
   
   return (
     <>
       { !token && <Navigate to='/'/> }
-      { !movie && <p>Cargando...</p> }
+      {/* { !movie && <p>Cargando...</p> } */}
       { movie && <>
         <h2>Titulo de la pelicula</h2>
         <div className='row'>

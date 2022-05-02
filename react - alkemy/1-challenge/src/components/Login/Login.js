@@ -35,11 +35,12 @@ const Login = () => {
        localStorage.setItem('token', token);
        navigate('/list')
       })
-      .catch(err => swal(<pre>{JSON.stringify(err, null, 2)}</pre>))
+      .catch(err => <pre>{JSON.stringify(err, null, 2)}</pre>)
     }
     
+    // {token && <Redirect to="/listado"/>}
     return (
-      <>
+    <>
       <h2>Login</h2>
       <form onSubmit={submitHandler}>
         <label htmlFor="email">
@@ -56,7 +57,6 @@ const Login = () => {
 
         <button type="submit">Login</button>
       </form>
-
     </> 
   )
 }
