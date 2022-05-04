@@ -19,7 +19,7 @@ const Details = ({token}) => {
   
   return (
     <>
-      { !token && <Navigate to='/'/> }
+      {!token && <Navigate to="/login"/>}
       {/* { !movie && <p>Cargando...</p> } */}
       { movie && <>
         <h2>Titulo de la pelicula</h2>

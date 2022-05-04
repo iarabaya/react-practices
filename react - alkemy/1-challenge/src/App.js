@@ -14,17 +14,17 @@ import Details from './components/Details/Details';
 
 function App() {
   return (
-    <div className='container mt-3'>
+    <>
       <Header/>
 
       <Routes>
-        <Route exact path='/' element={<Login/>}/>
+        <Route path='/login' element={<Login/>}/>
         <Route path='/list' element={<List/>}/>
         <Route path='/detail/:id' element={<Details/>}/>
       </Routes>
 
       <Footer/>
-    </div>
+    </>
   );
 }
 

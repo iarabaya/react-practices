@@ -2,12 +2,7 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer>
-      <nav>
-        <ul>
-          <li><a href="http://instagram.com" rel="noopener noreferrer">IG</a></li>
-        </ul>
-      </nav>
+    <footer className="nav justify-content-center">
       <p>Copyright Alkemy Challenge</p>
     </footer>
   )

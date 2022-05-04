@@ -13,22 +13,22 @@ const List = () => {
     // }
 
     //Use TMDB endpoint for movies
-    const endpoint = 'https:...';
-    axios.get(endpoint)
-    .then(res => res.json())
-    .then(res => {
-      console.log(res.data)
-      setMoviesList(res.data.results)
-    })
+    // const endpoint = 'https:...';
+    // axios.get(endpoint)
+    // .then(res => res.json())
+    // .then(res => {
+    //   console.log(res.data)
+    //   setMoviesList(res.data.results)
+    // })
   },[])
 
   return (
       <>
-        {!token && <Navigate to="/"/>}
+        {!token && <Navigate to="/login"/>}
 
         <div className='row'>
           
-          <div className='col-4'style={{border: '1px solid red'}}>
+          <div className='col-3'style={{border: '1px solid red'}}>
             <div className='card'>
               <img src='' className='card-img-top' alt=''/>
               <div className='card-body'>

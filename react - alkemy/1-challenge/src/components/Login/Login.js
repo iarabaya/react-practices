@@ -1,6 +1,6 @@
 import axios from "axios";
 import swal from "@sweetalert/with-react";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const Login = () => {
 
@@ -37,26 +37,30 @@ const Login = () => {
       })
       .catch(err => <pre>{JSON.stringify(err, null, 2)}</pre>)
     }
-    
-    // {token && <Redirect to="/listado"/>}
+    let token = localStorage.getItem('token');
     return (
-    <>
-      <h2>Login</h2>
-      <form onSubmit={submitHandler}>
-        <label htmlFor="email">
-          <span>Email:</span>
-          <input id="email" type="email" name="email" />
-        </label>
-        <br/>
+      <>  
+      {token && <Navigate to="/listado"/>}
+      <div className="row"> 
+        <div className="col-6 offset-3">
+          <h2>Login</h2>
+          <form onSubmit={submitHandler}>
+            <label htmlFor="email" className="form-label d-block mt-2">
+              <span>Email:</span>
+              <input id="email" type="email" name="email" className="form-control" />
+            </label>
+            <br/>
 
-        <label htmlFor="password">
-          <span>Password:</span>
-          <input id="password" type="password" name="password" />
-        </label>
-        <br/>
+            <label htmlFor="password" className="form-label d-block mt-2">
+              <span>Password:</span>
+              <input id="password" type="password" name="password" className="form-control" />
+            </label>
+            <br/>
 
-        <button type="submit">Login</button>
-      </form>
+            <button type="submit" className="btn btn-success mt-2">Login</button>
+          </form>
+        </div>
+      </div>
     </> 
   )
 }
