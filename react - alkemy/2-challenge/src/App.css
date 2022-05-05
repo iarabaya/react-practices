@@ -1,38 +1,53 @@
+@font-face {
+  font-family: 'metropolisbold';
+  src: url('./fonts/metropolis-bold-webfont.woff2') format('woff2'),
+       url('./fonts/metropolis-bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'metropolisregular';
+  src: url('./fonts/metropolis-regular-webfont.woff2') format('woff2'),
+       url('./fonts/metropolis-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'metropolissemi_bold';
+  src: url('./fonts/metropolis-semibold-webfont.woff2') format('woff2'),
+       url('./fonts/metropolis-semibold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
 .App {
-  text-align: center;
+  background: rgb(26, 29, 41);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.general-container.MuiContainer-root {
+  padding: 0 calc(3.5vw + 24px);
+  width: 100% !important;
+  max-width: none !important;
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+  min-height: calc(100vh - 309px);
+  margin-top: 76px;
+}
+.general-container.MuiContainer-root.detail-page-container {
+  padding-left: 0px ;
+  padding-right: 0px ;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+
+p,a,span,h1,h2,h3,h4 {
+  font-family: 'metropolisregular';
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+form {
+  background: white;
 }

@@ -13,7 +13,6 @@ const Login = () => {
 
   const onChangeInput = (e) => {
     const {name, value} = e.target;
-
     setLoginData((prevState) => ({...prevState, [name]: value}))
   }
 
@@ -21,6 +20,7 @@ const Login = () => {
     e.preventDefault();
     console.log(loginData)
 
+    //axios fetch
     setLogin(loginData)
     .then( (res) => {
       console.log("Usuario logueado correctamente")
