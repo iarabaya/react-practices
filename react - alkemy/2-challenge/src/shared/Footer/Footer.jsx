@@ -7,7 +7,8 @@ const Footer = () => {
     <footer>
       <div>
         <img src=""/>
-        <nav className="navBar-footer">
+        <nav className="navbar-footer">
+          
           <ul>
             <li><Link to="/">Politicas Privacidad</Link></li>
             <li><Link to="/">Acuerdo subscripcion</Link></li>

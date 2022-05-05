@@ -55,7 +55,7 @@ const Header = () => {
               aria-expanded={open ? 'true' : undefined}
               onClick={handleClick}
           >
-              <img src="./avatar.png" alt="" />
+              <img src="./avatar.png" alt="user avatar" />
           </button>
           <Menu
               id="basic-menu"
