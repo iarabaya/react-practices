@@ -1,8 +1,8 @@
 const personajes = ['Goku', 'Vegeta', 'Trunks']
 
-const [ p1 ] = personajes;
+const [ , , p3 ] = personajes;
 
-console.log( p1 );
+console.log( p3 );
 
 const returnArray = () => {
   return ['ABC', 123];
@@ -17,15 +17,12 @@ console.log(letras, numeros);
 const useState = ( valor ) => {
   return [ 
     valor , 
-    (nuevoValor) => {
-      // console.log(`Hola ${valor}`)
-      valor = nuevoValor
-    }
+    () => {console.log(`Hola ${valor}`)}
   ];
 }
 
 const [nombre, setNombre] = useState('Goku');
-setNombre('Vegeta');
+setNombre();
 
 // arr[1]();
 console.log(arr); 

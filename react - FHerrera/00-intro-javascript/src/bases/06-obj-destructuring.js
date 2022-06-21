@@ -11,25 +11,39 @@ console.log(persona.nombre);
 console.log(persona.age);
 console.log(persona.alias);
 
-const returnPerson = ( user ) => {
+const printPerson = ( user ) => {
   const { username: nombre, age, alias } = user;
   console.log(nombre, age, alias);
 }
 
-const returnPerson2 = ({ username: nombre, age, alias, rango = "Capitan" } ) => {
+const printPerson2 = ({ username: nombre, age, alias, rango = "Capitan" } ) => {
   console.log(nombre, age, alias, rango);
 }
 
-// eslint-disable-next-line react-hooks/rules-of-hooks
-export const useContext = ({ username: nombre, age, alias}) => {
-  return {
-    nombre,
-    anios: age
+const returnPerson = ({ alias, username, age, rank = 'Captain'}) => {
+  return { 
+    aliasName: alias,
+    username,
+    rank
   }
 }
 
-returnPerson(persona);
+// const avenger = returnPerson(persona);
 
-// const avenger = useContext(persona);
+// eslint-disable-next-line react-hooks/rules-of-hooks
+const useContext = ({ username: nombre, age, alias}) => {
+  return {
+    nombre,
+    anios: age,
+    location: {
+      lat: 14.2332,
+      lng: -12.334
+    }
+  }
+}
+
+const avenger = useContext(persona);
 // console.log(avenger);
-// const { nombre, anios } = useContext(persona);
+// const { nombre, anios, location: { lat, lng} } = useContext(persona);
+// console.log(nombre, anios);
+// console.log(lat, lng);
