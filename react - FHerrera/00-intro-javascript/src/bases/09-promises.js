@@ -1,14 +1,14 @@
-import { getHeroeById } from "./08-imp-exp";
+import { getHeroById} from "./08-imp-exp";
 
-const getHeroeByIdAsync = (id) =>{
+const getHeroByIdAsync = (id) =>{
 
   return new Promise((resolve, reject) => {
     
     setTimeout(() => {
-      const heroe = getHeroeById(id);
-      // console.log('2 segundos despues');
-      // console.log(heroe);
+      const heroe = getHeroById(id);
+
       if(heroe){
+        console.log('2 segundos despues');
         resolve(heroe);
       }else{
         reject('No se pudo encontrar el heroe')
@@ -24,7 +24,7 @@ const getHeroeByIdAsync = (id) =>{
 // .catch(err => console.warn(err))
 // .finally( console.log('se acabo la funcion') );
 
-getHeroeByIdAsync(4)
+getHeroByIdAsync(4)
 .then( console.log )
 .catch( console.warn )
 .finally( console.log('se acabo la funcion') );
