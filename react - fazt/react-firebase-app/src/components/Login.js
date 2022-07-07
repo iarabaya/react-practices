@@ -4,7 +4,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import Alert from './Alert';
 
 const Login = () => {
-	const { login, loginWithGoogle } = useAuth()
+	const { login, loginWithGoogle, resetPassword } = useAuth()
 	const navigate = useNavigate()
 
 
@@ -27,7 +27,7 @@ const Login = () => {
 			await login(user.email, user.password);
 			navigate("/")
 		} catch (error) {
-			console.log(error.code)
+			// console.log(error.code)
 			setError(error.message)
 		}
 	}
@@ -37,7 +37,17 @@ const Login = () => {
 			await loginWithGoogle()
 			navigate("/")
 		} catch (error) {
-			console.log(error)
+			setError(error.message);
+		}
+	}
+
+	const handleResetPassword = async () => {
+		if (!user.email) return setError("Please enter your email");
+		try {
+			await resetPassword(user.email)
+			
+		} catch (error) {
+			setError(error.message);
 		}
 	}
 
@@ -56,9 +66,13 @@ const Login = () => {
 					<input onChange={handleChange} type="password" name="password" id="password" placeholder='******' className='shadow appearance-none border rounded w-full py-2 px-3 text-gray leading-tight focus:outline-none focus:shadow-outline'/>
 				</div>
 			
-				<button type="submit" className='bg-blue-500 hover:bg-blue-700 text-white text-sm font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline'>
-					Login
-				</button>
+				<div className='flex items-center justify-between'>
+					<button type="submit" className='bg-blue-500 hover:bg-blue-700 text-white text-sm font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline'>
+						Login
+					</button>
+					<a onClick={() => handleResetPassword} href='#!' className='inline-block align-baseline font-bold text-sm text-blue hover:text-blue-800'>Forgot Password?</a>
+				</div>
+
 			</form>
 			<p className='my-4 text-sm flex justify-between px-3'>Don't have an account? <Link to='/register'>Register</Link></p>
 
