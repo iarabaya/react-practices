@@ -1,6 +1,5 @@
 // import { context } from "../context/authContext";
 // import { useContext } from "react";
-
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from "../context/authContext"
 
@@ -12,8 +11,12 @@ const Home = () => {
 	const navigate = useNavigate();
 
 	const handleLogout = async () => {
-		await logout();
-		navigate('/login');
+		try {
+			await logout();
+			navigate('/login');
+		} catch (error) {
+			console.log(error)
+		}
 	}
 
 	if(loading) return <h1>Loading</h1>
@@ -21,7 +24,7 @@ const Home = () => {
 	return (
 		<div>
 			<h1 className="text-3xl font-bold underline">
-				Welcome, {user ? user.email : 'stranger'}
+				Welcome, {user.displayName || user.email}
 			</h1>
 
 			<button type="button" onClick={handleLogout}>Log out</button>
