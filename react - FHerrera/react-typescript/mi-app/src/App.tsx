@@ -2,6 +2,7 @@ import { Counter } from "./components/Counter";
 import Usuario from './components/Usuario';
 import TimerPadre from './components/TimerPadre';
 import CounterRed from "./components/CounterRed";
+import Formulario from './components/Formulario';
 
 function App() {
   return (
@@ -21,6 +22,11 @@ function App() {
 			<hr />
 
 			<CounterRed/>
+
+			<h3>customHooks</h3>
+			<hr />
+
+			<Formulario/>
 
     </div>
   );
